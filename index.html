@@ -269,8 +269,8 @@
     .plan-card {
       background: #f5f7ff;
       border: 1.5px solid var(--border);
-      border-radius: var(--radius-lg); padding: 40px 36px;
-      width: 320px; position: relative;
+      border-radius: var(--radius-lg); padding: 36px 30px;
+      width: 300px; position: relative;
       transition: transform .25s, box-shadow .25s;
     }
     .plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
@@ -512,10 +512,11 @@
 
     /* Logo inline pequena nas seções (ícone de canto nos headings) */
     .section-logo-inline {
-      height: 28px; width: auto;
+      height: 44px; width: auto;
       display: inline-block; vertical-align: middle;
-      margin-right: 10px; margin-bottom: 3px;
-      opacity: .85;
+      margin-right: 14px; margin-bottom: 5px;
+      opacity: 1;
+      filter: drop-shadow(0 3px 10px rgba(12,29,80,.18));
     }
   </style>
 </head>
@@ -530,6 +531,7 @@
       <a href="#how">Como Funciona</a>
       <a href="#features">Recursos</a>
       <a href="#pricing">Planos</a>
+      <a href="#atencoes">Atenções</a>
       <a href="#faq">FAQ</a>
       <button class="btn-nav" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Assinar Agora</button>
     </div>
@@ -544,7 +546,7 @@
     <div class="hero-grid">
       <div class="hero-text">
         <div class="hero-badge">Novo &nbsp;•&nbsp; Análise Financeira Inteligente</div>
-        <h1>Seus extratos bancários OFX <span>analisados com clareza</span></h1>
+        <h1><span style="color:#94a3c4;text-shadow:0 2px 8px rgba(0,0,0,.45);">Seus extratos bancários OFX</span> <span>analisados com clareza</span></h1>
         <p class="hero-sub">Importe arquivos OFX de qualquer banco, classifique lançamentos, gere DRE com EBITDA e visualize indicadores financeiros — tudo rodando <strong style="color:#4ddf70">100% no seu computador</strong>, sem enviar dados para nenhum servidor.</p>
         <div class="hero-cta">
           <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Começar Grátis</button>
@@ -779,6 +781,52 @@
     </div>
   </section>
 
+  <!-- ===== ATENÇÕES IMPORTANTES ===== -->
+  <section id="atencoes" style="background:#ffffff;padding:70px 6%;">
+    <div class="max-w">
+      <span class="section-label">Antes de assinar, leia</span>
+      <h2 class="section-title">O que você precisa <span class="text-green">saber e fazer</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:1rem;margin-top:14px;max-width:600px;">O ExtratOFX roda 100% no seu computador — isso é ótimo para privacidade, mas exige alguns cuidados da sua parte.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:36px;">
+
+        <!-- Backup -->
+        <div style="background:#f2f5fe;border:1.5px solid var(--border);border-radius:16px;padding:26px;position:relative;overflow:hidden;">
+          <div style="font-size:2rem;margin-bottom:12px;">💾</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Faça backups regulares</h3>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.65;">Seus dados ficam no IndexedDB do navegador. Use o menu <strong>Dados → Exportar base JSON</strong> para salvar uma cópia no seu computador. O sistema também oferece backup automático por intervalo de minutos nas configurações.</p>
+          <div style="margin-top:12px;background:rgba(46,204,82,.10);border:1px solid rgba(46,204,82,.25);border-radius:8px;padding:8px 12px;font-size:.8rem;color:#167a2c;font-weight:600;">✓ Recomendado: backup semanal mínimo</div>
+        </div>
+
+        <!-- Histórico -->
+        <div style="background:#fff8f0;border:1.5px solid #f5d5a8;border-radius:16px;padding:26px;position:relative;overflow:hidden;">
+          <div style="font-size:2rem;margin-bottom:12px;">⚠️</div>
+          <h3 style="font-size:1rem;font-weight:700;color:#7a3500;margin-bottom:8px;">Não limpe os dados do navegador</h3>
+          <p style="font-size:.875rem;color:#7a4a20;line-height:1.65;">"Limpar histórico de navegação" ou "Limpar dados do site" <strong>apaga o IndexedDB</strong> — ou seja, apaga todos os seus lançamentos e a ativação da licença. Se precisar limpar o cache, desmarque a opção "Dados de sites" ou "IndexedDB".</p>
+          <div style="margin-top:12px;background:rgba(200,100,0,.10);border:1px solid rgba(200,100,0,.3);border-radius:8px;padding:8px 12px;font-size:.8rem;color:#7a3500;font-weight:600;">⚠ Ação irreversível — dados não podem ser recuperados</div>
+        </div>
+
+        <!-- Chave de licença -->
+        <div style="background:#f2f5fe;border:1.5px solid var(--border);border-radius:16px;padding:26px;position:relative;overflow:hidden;">
+          <div style="font-size:2rem;margin-bottom:12px;">🔑</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Guarde sua chave de licença</h3>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.65;">A chave de ativação (ex: <code style="background:#e8eeff;padding:1px 5px;border-radius:4px;font-size:.78rem">EXTRAT-XXXX-AN-XXXXXXXX</code>) é necessária toda vez que você acessar o sistema em um <strong>novo navegador ou computador</strong>. Salve-a no seu gerenciador de senhas ou anote em local seguro.</p>
+          <div style="margin-top:12px;background:rgba(46,204,82,.10);border:1px solid rgba(46,204,82,.25);border-radius:8px;padding:8px 12px;font-size:.8rem;color:#167a2c;font-weight:600;">✓ Enviada por WhatsApp/e-mail na compra</div>
+        </div>
+
+        <!-- Múltiplos navegadores -->
+        <div style="background:#eef1ff;border:1.5px solid #c0cbf0;border-radius:16px;padding:26px;position:relative;overflow:hidden;">
+          <div style="font-size:2rem;margin-bottom:12px;">🌐</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Cada navegador é uma instalação</h3>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.65;">Chrome, Firefox e Edge armazenam dados separadamente. Se você usa o ExtratOFX no Chrome e quiser usar no Firefox, será necessário <strong>reinserir a chave</strong> e <strong>reimportar seu backup JSON</strong>. O Plano Multi permite até 3 ativações simultâneas.</p>
+          <div style="margin-top:12px;background:rgba(26,56,128,.08);border:1px solid rgba(26,56,128,.2);border-radius:8px;padding:8px 12px;font-size:.8rem;color:var(--blue-mid);font-weight:600;">ℹ Plano Multi: use em até 3 computadores/navegadores</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===== PRICING ===== -->
   <section id="pricing">
     <img src="img/logo.png" class="logo-wm pricing-logo-wm" alt="" aria-hidden="true" />
@@ -834,8 +882,36 @@
           <button class="btn-plan btn-plan-solid">Assinar Anual — Economize 34%</button>
         </div>
 
+        <!-- Multi -->
+        <div class="plan-card">
+          <div class="plan-badge" style="background:linear-gradient(135deg,#1a3880,#2d5bd4)">💻 Multi Computadores</div>
+          <div class="plan-name">Plano Multi</div>
+          <div class="plan-price">
+            <span class="plan-currency">R$</span>
+            <span class="plan-amount">12<small style="font-size:1.8rem">,90</small></span>
+          </div>
+          <div class="plan-period">por mês <span class="savings-tag" style="background:rgba(26,56,128,.12);color:var(--blue-mid);border-color:rgba(26,56,128,.25)">até 3 PCs</span></div>
+          <div class="plan-billing">Cobrado em <strong style="color:var(--blue-mid)">R$ 154,80/ano</strong></div>
+          <ul class="plan-features">
+            <li>Tudo do Plano Anual</li>
+            <li><strong>Até 3 ativações</strong> simultâneas</li>
+            <li>Ideal para uso em casa + trabalho</li>
+            <li>Mesma chave em Chrome, Firefox, Edge</li>
+            <li>Reativação ilimitada por dispositivo</li>
+            <li>Suporte prioritário via WhatsApp</li>
+          </ul>
+          <button class="btn-plan btn-plan-outline" style="border-color:var(--blue-mid);color:var(--blue-mid)">Assinar Multi</button>
+        </div>
+
       </div>
-      <p style="margin-top:28px;font-size:.82rem;color:var(--text-muted);">
+
+      <!-- NOTA DE ATIVAÇÃO -->
+      <div style="margin-top:32px;background:#f2f5fe;border:1px solid var(--border);border-radius:14px;padding:22px 28px;text-align:left;max-width:760px;margin-left:auto;margin-right:auto;">
+        <p style="font-size:.82rem;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">🔑 Como funciona a ativação</p>
+        <p style="font-size:.82rem;color:var(--text-muted);line-height:1.7;">Após a assinatura você recebe uma <strong>chave de licença</strong> (ex: <code style="background:#e8eeff;padding:1px 6px;border-radius:4px;font-size:.8rem">EXTRAT-XXXX-AN-XXXXXXXX</code>) por WhatsApp ou e-mail. Insira-a na primeira abertura do sistema — ela fica salva <strong>no navegador</strong> que você utilizar. Guarde sua chave em local seguro: você precisará dela ao trocar de navegador ou computador.</p>
+      </div>
+
+      <p style="margin-top:16px;font-size:.82rem;color:var(--text-muted);">
         Ao assinar, você concorda com nossos
         <a href="#" onclick="openModal('modal-terms'); return false;" style="color:var(--accent);text-decoration:underline;">Termos de Uso</a> e
         <a href="#" onclick="openModal('modal-privacy'); return false;" style="color:var(--accent);text-decoration:underline;">Política de Privacidade</a>.
@@ -873,7 +949,19 @@
         </div>
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">Como funciona o backup? Posso perder meus dados? <span class="faq-icon">+</span></button>
-          <div class="faq-a">O sistema oferece backup automático configurável (de X em X minutos) que gera um arquivo JSON na sua máquina. Você também pode exportar manualmente a qualquer momento. Recomendamos fazer backups regulares, pois limpar os dados do navegador pode apagar o IndexedDB.</div>
+          <div class="faq-a">O sistema oferece backup automático configurável (de X em X minutos) que salva um arquivo JSON no seu computador. Você também exporta manualmente a qualquer momento em <strong>Dados → Exportar base JSON</strong>. <strong>Atenção:</strong> limpar dados do navegador, reinstalar o sistema operacional ou trocar de computador pode apagar o IndexedDB — faça backups regulares. Se isso acontecer, basta reimportar o arquivo JSON e tudo volta ao normal.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">O que acontece se eu limpar o histórico do navegador? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><strong>Seus dados e sua ativação serão apagados</strong> se a opção "Dados de sites" ou "IndexedDB" estiver marcada na limpeza. Para evitar isso, ao limpar o navegador, desmarque especificamente a opção de dados de sites. Caso isso aconteça acidentalmente: reimporte seu backup JSON para recuperar os dados, e reinsira sua chave de licença para reativar. Nenhum dado é perdido permanentemente se você tiver o backup.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Preciso instalar algo? O sistema funciona offline? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Não precisa instalar nada. O ExtratOFX é um único arquivo HTML que você abre no navegador. Após a ativação da licença (que requer internet uma vez), o sistema funciona <strong>completamente offline</strong> — sem precisar de conexão para analisar seus extratos, gerar gráficos ou imprimir relatórios. A internet só é usada na ativação e em atualizações periódicas da licença.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre os planos Anual e Multi? <span class="faq-icon">+</span></button>
+          <div class="faq-a">O Plano Anual (R$ 118,80/ano) permite <strong>1 ativação</strong> — ideal para quem usa em um único navegador/computador. O Plano Multi (R$ 154,80/ano) permite <strong>até 3 ativações simultâneas</strong> — ideal para quem usa em casa e no trabalho, ou que usa Chrome e Firefox no mesmo computador. A mesma chave é reinserida em cada navegador/computador adicional.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">Como entrar em contato com o suporte? <span class="faq-icon">+</span></button>
