@@ -13,25 +13,29 @@
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --blue-dark:   #0a1b45;
-      --blue-mid:    #163580;
-      --blue-light:  #2653cc;
-      --accent:      #d9650a;
-      --accent-dark: #b34f00;
-      --accent-light:#f0861e;
-      --grad-brand:  linear-gradient(135deg, #f0861e 0%, #163580 100%);
-      --grad-hero:   linear-gradient(160deg, #0a1b45 0%, #163580 55%, #6b2900 100%);
-      --grad-card:   linear-gradient(135deg, #e8eeff 0%, #fff3e8 100%);
-      --text-light:  #0a1b45;
-      --text-muted:  #344266;
-      --surface:     #f2f5fe;
-      --surface2:    #ffffff;
-      --border:      #c8d4ee;
-      --white:       #ffffff;
-      --shadow-lg:   0 20px 60px rgba(10,27,69,.13);
-      --shadow-card: 0 8px 32px rgba(10,27,69,.11);
-      --radius:      12px;
-      --radius-lg:   20px;
+      /* Cores extraídas da logomarca ExtratOFX */
+      --blue-dark:    #0c1d50;          /* azul marinho fundo */
+      --blue-mid:     #1a3880;          /* azul principal (texto "Extrat") */
+      --blue-light:   #2d5bd4;          /* azul claro interativo */
+      --green:        #2ecc52;          /* verde vibrante da logo */
+      --green-dark:   #1ea83c;          /* verde escuro */
+      --green-light:  #4ddf70;          /* verde claro / hover */
+      --accent:       #2ecc52;          /* alias → verde logo */
+      --accent-dark:  #1ea83c;
+      --accent-light: #4ddf70;
+      --grad-brand:   linear-gradient(135deg, #3dcc5a 0%, #1a3880 100%);  /* gradiente logo */
+      --grad-hero:    linear-gradient(160deg, #0c1d50 0%, #1a3880 52%, #145c28 100%);
+      --grad-card:    linear-gradient(135deg, #eaf0ff 0%, #edfff3 100%);
+      --text-light:   #0c1d50;
+      --text-muted:   #344270;
+      --surface:      #f2f6ff;
+      --surface2:     #ffffff;
+      --border:       #c6d3ef;
+      --white:        #ffffff;
+      --shadow-lg:    0 20px 60px rgba(12,29,80,.13);
+      --shadow-card:  0 8px 32px rgba(12,29,80,.10);
+      --radius:       12px;
+      --radius-lg:    20px;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -87,13 +91,13 @@
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(217,101,10,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(46,204,82,.14) 0%, transparent 60%),
         radial-gradient(ellipse 40% 40% at 20% 80%, rgba(26,58,138,.2) 0%, transparent 55%);
     }
     .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; width: 100%; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(217,101,10,.12); border: 1px solid rgba(217,101,10,.35);
+      background: rgba(46,204,82,.12); border: 1px solid rgba(46,204,82,.38);
       color: var(--accent-light); padding: 6px 16px; border-radius: 20px;
       font-size: .8rem; font-weight: 600; letter-spacing: .5px;
       margin-bottom: 20px; text-transform: uppercase;
@@ -114,9 +118,9 @@
       font-size: 1rem; font-weight: 700;
       border: none; cursor: pointer;
       transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 24px rgba(217,101,10,.35);
+      box-shadow: 0 4px 24px rgba(46,204,82,.38);
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(217,101,10,.45); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(46,204,82,.48); }
     .btn-outline {
       background: rgba(255,255,255,.15); color: #fff;
       padding: 13px 28px; border-radius: var(--radius);
@@ -140,7 +144,7 @@
     .dot { width: 11px; height: 11px; border-radius: 50%; }
     .dot-r { background: #ff5f57; }
     .dot-y { background: #febc2e; }
-    .dot-g { background: #f0861e; }
+    .dot-g { background: #2ecc52; }
     .card-title { font-size: .75rem; color: var(--text-muted); margin-left: auto; }
     .chart-bars {
       display: flex; align-items: flex-end; gap: 8px; height: 120px; margin-bottom: 18px;
@@ -152,7 +156,7 @@
       transform-origin: bottom;
     }
     @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-    .bar-income { background: linear-gradient(180deg, #f0861e, #b34f00); }
+    .bar-income { background: linear-gradient(180deg, #2ecc52, #1ea83c); }
     .bar-expense { background: linear-gradient(180deg, #2d5dd4, #1a3a8a); }
     .bar-label { font-size: .65rem; color: var(--text-muted); }
     .card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -163,7 +167,7 @@
     }
     .stat-label { font-size: .7rem; color: var(--text-muted); margin-bottom: 4px; }
     .stat-value { font-size: 1.15rem; font-weight: 700; }
-    .stat-value.green { color: #b34f00; }
+    .stat-value.green { color: #1ea83c; }
     .stat-value.blue { color: #1b4fbf; }
     .floating-tag {
       position: absolute; background: #ffffff;
@@ -194,7 +198,7 @@
     .max-w { max-width: 1200px; margin: 0 auto; }
 
     /* ===== HOW IT WORKS ===== */
-    #how { background: #ffffff; }
+    #how { background: #ffffff; overflow: hidden; }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-top: 56px; }
     .step {
       text-align: center; padding: 36px 24px;
@@ -210,13 +214,13 @@
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem; font-weight: 800;
       margin: 0 auto 18px;
-      box-shadow: 0 4px 20px rgba(217,101,10,.3);
+      box-shadow: 0 4px 20px rgba(46,204,82,.32);
     }
     .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
     .step p { font-size: .875rem; color: var(--text-muted); }
 
     /* ===== FEATURES ===== */
-    #features { background: #eef2fc; }
+    #features { background: #eef2fc; overflow: hidden; }
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 56px; }
     .feat-card {
       background: #ffffff;
@@ -260,7 +264,7 @@
     }
 
     /* ===== PRICING ===== */
-    #pricing { background: #ffffff; }
+    #pricing { background: #ffffff; overflow: hidden; }
     .pricing-wrap { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 56px; }
     .plan-card {
       background: #f5f7ff;
@@ -293,7 +297,7 @@
     .plan-features li::before {
       content: '✓';
       min-width: 20px; height: 20px;
-      background: rgba(217,101,10,.15);
+      background: rgba(46,204,82,.14);
       color: var(--accent);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -313,12 +317,12 @@
     .btn-plan-outline:hover { border-color: var(--accent); color: var(--accent); }
     .btn-plan-solid {
       background: var(--grad-brand); color: #fff;
-      box-shadow: 0 4px 20px rgba(217,101,10,.3);
+      box-shadow: 0 4px 20px rgba(46,204,82,.32);
     }
     .btn-plan-solid:hover { opacity: .88; transform: translateY(-2px); }
     .savings-tag {
       display: inline-block;
-      background: rgba(217,101,10,.12); border: 1px solid rgba(217,101,10,.3);
+      background: rgba(46,204,82,.12); border: 1px solid rgba(46,204,82,.32);
       color: var(--accent); font-size: .75rem; font-weight: 700;
       padding: 3px 10px; border-radius: 20px; margin-left: 8px;
     }
@@ -350,6 +354,7 @@
     #cta-banner {
       background: var(--grad-brand); padding: 70px 6%;
       text-align: center;
+      overflow: hidden;
     }
     #cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
     #cta-banner p { font-size: 1.05rem; color: rgba(255,255,255,.85); margin-bottom: 32px; }
@@ -452,9 +457,66 @@
     }
 
     /* ===== UTILS ===== */
-    .text-green { color: var(--accent); }
+    .text-green { color: var(--green-dark); }
     .divider { width: 48px; height: 4px; background: var(--grad-brand); border-radius: 2px; margin: 16px 0 0; }
     .center-divider { margin-left: auto; margin-right: auto; }
+
+    /* ===== LOGO WATERMARK ===== */
+    .logo-wm {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      display: block;
+      z-index: 0;
+    }
+    /* Hero: logo gigante no canto direito, leve rotação */
+    .hero-logo-wm {
+      width: clamp(280px, 38vw, 480px);
+      bottom: -30px; right: -40px;
+      opacity: .07;
+      transform: rotate(-8deg);
+      filter: brightness(10);         /* torna branca sobre fundo escuro */
+    }
+    /* "Como funciona" — centralizada, muito suave */
+    .how-logo-wm {
+      width: clamp(320px, 45vw, 560px);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .04;
+    }
+    /* Features — canto superior direito da seção */
+    .feat-section-logo-wm {
+      width: clamp(200px, 28vw, 340px);
+      top: 30px; right: -20px;
+      opacity: .05;
+    }
+    /* Pricing — centrada atrás dos cards */
+    .pricing-logo-wm {
+      width: clamp(320px, 44vw, 520px);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .04;
+    }
+    /* CTA banner — lado direito, branca */
+    .cta-logo-wm {
+      width: clamp(200px, 28vw, 320px);
+      top: 50%; right: 4%;
+      transform: translateY(-50%);
+      opacity: .18;
+      filter: brightness(10);
+    }
+
+    /* Garante position:relative nas seções que recebem watermark */
+    #hero, #how, #features, #pricing, #cta-banner { position: relative; }
+    #how .max-w, #features .max-w, #pricing .max-w { position: relative; z-index: 1; }
+
+    /* Logo inline pequena nas seções (ícone de canto nos headings) */
+    .section-logo-inline {
+      height: 28px; width: auto;
+      display: inline-block; vertical-align: middle;
+      margin-right: 10px; margin-bottom: 3px;
+      opacity: .85;
+    }
   </style>
 </head>
 <body>
@@ -478,11 +540,12 @@
 
   <!-- ===== HERO ===== -->
   <section id="hero">
+    <img src="img/logo.png" class="logo-wm hero-logo-wm" alt="" aria-hidden="true" />
     <div class="hero-grid">
       <div class="hero-text">
         <div class="hero-badge">Novo &nbsp;•&nbsp; Análise Financeira Inteligente</div>
         <h1>Seus extratos bancários OFX <span>analisados com clareza</span></h1>
-        <p class="hero-sub">Importe arquivos OFX de qualquer banco, classifique lançamentos, gere DRE com EBITDA e visualize indicadores financeiros — tudo rodando <strong style="color:#ffa040">100% no seu computador</strong>, sem enviar dados para nenhum servidor.</p>
+        <p class="hero-sub">Importe arquivos OFX de qualquer banco, classifique lançamentos, gere DRE com EBITDA e visualize indicadores financeiros — tudo rodando <strong style="color:#4ddf70">100% no seu computador</strong>, sem enviar dados para nenhum servidor.</p>
         <div class="hero-cta">
           <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Começar Grátis</button>
           <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Ver como funciona</button>
@@ -539,6 +602,7 @@
 
   <!-- ===== HOW IT WORKS ===== -->
   <section id="how">
+    <img src="img/logo.png" class="logo-wm how-logo-wm" alt="" aria-hidden="true" />
     <div class="max-w section-center">
       <span class="section-label">Simples e Rápido</span>
       <h2 class="section-title">Como o ExtratOFX funciona</h2>
@@ -575,15 +639,16 @@
 
   <!-- ===== FEATURES ===== -->
   <section id="features">
+    <img src="img/logo.png" class="logo-wm feat-section-logo-wm" alt="" aria-hidden="true" />
     <div class="max-w">
       <span class="section-label">Recursos da Plataforma</span>
-      <h2 class="section-title">Tudo que você precisa para <br /><span class="text-green">controlar suas finanças</span></h2>
+      <h2 class="section-title"><img src="img/logo.png" class="section-logo-inline" alt="ExtratOFX" />Tudo que você precisa para <br /><span class="text-green">controlar suas finanças</span></h2>
       <div class="divider"></div>
       <!-- DESTAQUE: dados locais -->
-      <div style="margin-top:40px;background:linear-gradient(135deg,rgba(26,58,138,.07),rgba(217,101,10,.07));border:2px solid rgba(217,101,10,.3);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <div style="margin-top:40px;background:linear-gradient(135deg,rgba(26,58,138,.07),rgba(46,204,82,.07));border:2px solid rgba(46,204,82,.32);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
         <div style="font-size:2.2rem;flex-shrink:0">🔒</div>
         <div>
-          <h3 style="font-size:1.15rem;font-weight:800;color:#0a1b45;margin-bottom:6px;">Seus dados ficam <span style="color:#d9650a">100% na sua máquina</span> — sem nuvem, sem servidor</h3>
+          <h3 style="font-size:1.15rem;font-weight:800;color:#0c1d50;margin-bottom:6px;">Seus dados ficam <span style="color:#1ea83c">100% na sua máquina</span> — sem nuvem, sem servidor</h3>
           <p style="color:#4a5a80;font-size:.95rem;line-height:1.65;">O ExtratOFX armazena todos os lançamentos, classificações e configurações no <strong>IndexedDB do seu próprio navegador</strong>. Nenhuma informação financeira é enviada à internet. Não existe servidor que guarde seus dados — só você tem acesso.</p>
         </div>
       </div>
@@ -716,6 +781,7 @@
 
   <!-- ===== PRICING ===== -->
   <section id="pricing">
+    <img src="img/logo.png" class="logo-wm pricing-logo-wm" alt="" aria-hidden="true" />
     <div class="max-w section-center">
       <span class="section-label">Planos e Preços</span>
       <h2 class="section-title">Investimento simples, <span class="text-green">sem surpresas</span></h2>
@@ -819,6 +885,7 @@
 
   <!-- ===== CTA BANNER ===== -->
   <section id="cta-banner">
+    <img src="img/logo.png" class="logo-wm cta-logo-wm" alt="" aria-hidden="true" />
     <h2>Controle financeiro completo — sem nuvem, sem servidor</h2>
     <p>Seus dados ficam no seu computador. Importe seu primeiro OFX agora e veja DRE, EBITDA e indicadores em minutos.</p>
     <button class="btn-cta-white" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Assinar agora — a partir de R$ 9,90/mês</button>
